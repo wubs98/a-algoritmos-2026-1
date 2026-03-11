@@ -1,4 +1,5 @@
 import time
+import sys
 
 def fatorial(n):
     if n == 0:
@@ -7,7 +8,6 @@ def fatorial(n):
         return n * fatorial(n - 1)
 
 def medir_tempo(p):
-    operacao = "y"
     inicio = time.perf_counter()
     resultado = fatorial(p)
     fim = time.perf_counter()
@@ -15,8 +15,10 @@ def medir_tempo(p):
     print(f"O fatorial de {num} é {resultado}")
     print(f"Tempo de Execução: {tempo:.10f} segundos")
     operacao = str(input("Para calcular outro número, pressione qualquer tecla. Pressione N para encerrar: "))
-    if operacao == "n" or "N":
-        exit()
+    if operacao == "n":
+        sys.exit()
+    elif operacao == "N":
+        sys.exit()
     
 
 x = 0
